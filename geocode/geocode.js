@@ -3,11 +3,11 @@ const request = require('request');
 const geocodeAddress = (address, callback, ) => {
     let encodedAddress = encodeURIComponent(address);
     request({
-        url: `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}`,
+        url: `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}&key=AIzaSyDrVqk_N8cQl8P6Xdkcj1ve-6kTHEUoAK4`,
         json: true
     }, (error, response, body) => {
         if (error) {
-            callback('Unable to connecto to google servers.');
+            callback('Unable to connect to google servers.');
         } else if (body.status === 'ZERO_RESULTS') {
             callback('Unable to find that address');
         } else if (body.status === 'OK') {
