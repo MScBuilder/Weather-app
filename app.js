@@ -20,11 +20,11 @@ geocode.geocodeAddress (argv.address, (errorMessage, results) => {
         console.log (errorMessage);
     } else {
         console.log(JSON.stringify(results, undefined, 2));
-        weatherForecast.currentWeather (results.latitude, results.longitude, (errorMess, weather) => {
-            if (errorMess) {
-                console.log (errorMess);
+        weatherForecast.getWeather (results.latitude, results.longitude, (errorMessage, weatherResults) => {
+            if (errorMessage) {
+                console.log (errorMessage);
             } else {
-                console.log(JSON.stringify(weather, undefined, 2));
+                console.log(JSON.stringify(weatherResults, undefined, 2));
             }
         });
     }
