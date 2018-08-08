@@ -17,7 +17,7 @@ const argv = yargs
 
 geocode.geocodeAddress(argv.address).then((location) => {
   console.log (JSON.stringify(location, undefined, 2));
-  weather.currentWeather(results.latitude, results.longitude, (errorMessage, weatherResults) => {
+  weather.currentWeather(location.latitude, location.longitude, (errorMessage, weatherResults) => {
     if (errorMessage) {
         console.log (errorMessage);
     } else {
@@ -25,5 +25,5 @@ geocode.geocodeAddress(argv.address).then((location) => {
     }
   });
 }).catch((errorMessage) => {
-  console.log('errorMessage');
+  console.log(errorMessage);
 });
