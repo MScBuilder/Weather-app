@@ -1,3 +1,4 @@
+node_modules/
 node_modules/.bin/semver
 node_modules/.bin/har-validator
 node_modules/.bin/har-validator.cmd
